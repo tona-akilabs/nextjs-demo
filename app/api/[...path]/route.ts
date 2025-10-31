@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const API_BASE = "https://kh.fd-api.com/api/v5";
-const API_KEY = process.env.FP_API_KEY ?? "volo"; // store in .env for safety
+const API_BASE = process.env.API_BASE;
+const API_KEY = process.env.API_KEY
 
 async function proxy(req: NextRequest) {
     const path = req.nextUrl.pathname.replace(/^\/api/, "");
