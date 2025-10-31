@@ -29,6 +29,20 @@ export default function PostPage() {
          fetchArticles();
     }, [])
 
+    useEffect(() => {
+        async function fetchCustomer() {
+            try { // /api/v5/configuration/customer
+                const res = await fetch("/api/configuration/customer");
+                console.info(res);
+                const data = await res.json();
+                console.info(data);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        fetchCustomer();
+    }, [])
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p style={{ color: "red" }}>{error}</p>;
 
