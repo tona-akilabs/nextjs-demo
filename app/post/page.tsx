@@ -31,7 +31,7 @@ export default function PostPage() {
 
     useEffect(() => {
         async function fetchCustomer() {
-            try { // /api/v5/configuration/customer
+            try {
                 const res = await fetch("/api/configuration/customer");
                 console.info(res);
                 const data = await res.json();
